@@ -1,4 +1,3 @@
-
 /* =========================================
    VARIABLES Y CONFIGURACIÓN BASE
    ========================================= */
@@ -40,6 +39,16 @@ header {
 }
 
 .logo { font-size: 24px; font-weight: 700; color: var(--color-primario); }
+
+/* BOTÓN DE MENÚ PARA CELULAR (Oculto en computadora) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-primario);
+    cursor: pointer;
+}
 
 nav ul { list-style: none; display: flex; gap: 30px; align-items: center; }
 nav a { text-decoration: none; color: var(--color-texto); font-weight: 500; font-size: 14px; transition: color 0.3s; }
@@ -217,6 +226,7 @@ footer { background-color: #1a1a1a; color: #ffffff; padding: 60px 10% 20px 10%; 
 .footer-columna p { color: #aaaaaa; font-size: 0.9rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
 
 .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #333; color: #777; font-size: 0.85rem; }
+
 /* =========================================
    ESTILOS PARA DETALLES Y PRECIOS EN TARJETAS
    ========================================= */
@@ -258,4 +268,62 @@ footer { background-color: #1a1a1a; color: #ffffff; padding: 60px 10% 20px 10%; 
     font-size: 0.75rem;
     color: #999;
     font-weight: 400;
+}
+
+/* =========================================
+   MAGIA RESPONSIVA (PARA CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Ajustes del menú de arriba */
+    header { padding: 15px 20px; }
+    
+    .menu-toggle { display: block; } /* Aparece el botón de 3 rayitas */
+    
+    #navLinks {
+        display: none; /* Escondemos el menú extendido */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-blanco);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        padding: 20px 0;
+        border-top: 1px solid rgba(191, 161, 143, 0.2);
+    }
+
+    #navLinks.activo { display: block; } /* Se muestra al tocar el botón */
+    
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Reducimos textos y espacios gigantes */
+    .hero {
+        padding: 100px 5% 80px 5%;
+        height: auto;
+        text-align: center;
+    }
+    
+    .hero h1 { font-size: 2.8rem; }
+    
+    /* Acomodamos íconos, tarjetas y pie de página en columna */
+    .iconos-filosofia, .footer-contenido {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-columna p { justify-content: center; }
+
+    .contacto-caja { padding: 40px 20px; }
+    .contacto-caja h2 { font-size: 2rem; }
+
+    /* Márgenes amigables para el teléfono */
+    .filosofia-section, .tratamientos-section, .recomendaciones-section, .contacto-section {
+        padding: 60px 5%;
+    }
+
+    .tarjeta { width: 100%; }
 }
