@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Estética Médica</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Clínica Estética</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#filosofia">Filosofía</a></li>
+                <li><a href="#tratamientos">Tratamientos</a></li>
+                <li><a href="#recomendaciones">Cuidados</a></li>
+                <li><a href="#contacto" class="btn-nav">Agendar Cita</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+            <h1>Excelencia en Estética Médica</h1>
+            <p>Protocolos de vanguardia diseñados para resaltar tu belleza natural con seguridad, ética y resultados comprobables.</p>
+            <a href="#tratamientos" class="btn-primario">Explorar Servicios</a>
+        </div>
+    </section>
+
+    <section id="filosofia" class="filosofia-section">
+        <div class="contenedor-filosofia" data-aos="fade-right">
+            <h2>Nuestra Filosofía</h2>
+            <p>Creemos en la estética como una extensión de la salud. Cada paciente es valorado de forma integral para ofrecer tratamientos personalizados que respeten la armonía facial y corporal. No transformamos, realzamos tu mejor versión.</p>
+            <div class="iconos-filosofia">
+                <div class="icono-item"><i class="fa-solid fa-user-doctor"></i><span>Atención Médica</span></div>
+                <div class="icono-item"><i class="fa-solid fa-vial-circle-check"></i><span>Productos Premium</span></div>
+                <div class="icono-item"><i class="fa-regular fa-face-smile"></i><span>Resultados Naturales</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tratamientos" class="tratamientos-section">
+        <div class="titulos-seccion" data-aos="fade-up">
+            <h2>Nuestros Tratamientos</h2>
+            <p>Soluciones avanzadas con desglose de sesiones</p>
+        </div>
+        
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta" data-aos="fade-up" data-aos-delay="100">
+                <div class="icono-tarjeta"><i class="fa-solid fa-spa"></i></div>
+                <h3>Limpieza Facial</h3>
+                <p class="descripcion">Un protocolo completo que incluye higienización profunda, extracción de impurezas, exfoliación y aplicación de mascarillas hidratantes. Diseñado para oxigenar la piel y cerrar poros dilatados de manera segura.</p>
+                
+                <div class="detalles-tecnicos">
+                    <p><i class="fa-regular fa-clock"></i> <strong>Duración:</strong> 60 minutos</p>
+                    <p><i class="fa-regular fa-calendar-days"></i> <strong>Frecuencia:</strong> Cada 28 a 30 días</p>
+                    <p class="precio-texto"><strong>Inversión:</strong> $600 MXN</p>
+                </div>
+            </div>
+
+            <div class="tarjeta" data-aos="fade-up" data-aos-delay="300">
+                <div class="icono-tarjeta"><i class="fa-solid fa-syringe"></i></div>
+                <h3>Aplicación de Botox</h3>
+                <p class="descripcion">Tratamiento mínimamente invasivo enfocado en relajar los músculos faciales para atenuar líneas de expresión y arrugas dinámicas. El efecto completo se observa a los 15 días y ofrece un aspecto descansado.</p>
+                
+                <div class="detalles-tecnicos">
+                    <p><i class="fa-regular fa-clock"></i> <strong>Duración:</strong> 30 minutos</p>
+                    <p><i class="fa-regular fa-calendar-days"></i> <strong>Frecuencia:</strong> Cada 4 a 6 meses</p>
+                    <p class="precio-texto"><strong>Inversión:</strong> $3,800 MXN <span class="sub-precio">(Por zona)</span></p>
+                </div>
+            </div>
+
+            <div class="tarjeta" data-aos="fade-up" data-aos-delay="500">
+                <div class="icono-tarjeta"><i class="fa-solid fa-wave-square"></i></div>
+                <h3>Radiofrecuencia</h3>
+                <p class="descripcion">Tecnología no invasiva que estimula la producción de colágeno y elastina mediante calor controlado en las capas profundas. Combate la flacidez cutánea y redefine el óvalo facial de manera progresiva.</p>
+                
+                <div class="detalles-tecnicos">
+                    <p><i class="fa-regular fa-clock"></i> <strong>Duración:</strong> 45 minutos</p>
+                    <p><i class="fa-regular fa-calendar-days"></i> <strong>Frecuencia:</strong> 1 sesión cada 15 días</p>
+                    <p class="precio-texto"><strong>Inversión:</strong> $800 MXN <span class="sub-precio">(Por sesión)</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recomendaciones" class="recomendaciones-section">
+        <div class="titulos-seccion" data-aos="fade-up">
+            <h2>Guía de Cuidados Post-Tratamiento</h2>
+            <p>El éxito de tu tratamiento continúa en casa</p>
+        </div>
+        
+        <div class="contenedor-recomendaciones">
+            <div class="recomendacion-item" data-aos="fade-up" data-aos-delay="100">
+                <strong><i class="fa-solid fa-droplet" style="color: #bfa18f; margin-right: 8px;"></i> Limpieza Facial:</strong>
+                <p>Evita el maquillaje y la exposición directa al sol durante las primeras 24 horas. Usa protector solar religiosamente cada 4 horas.</p>
+            </div>
+            <div class="recomendacion-item" data-aos="fade-up" data-aos-delay="200">
+                <strong><i class="fa-solid fa-ban" style="color: #bfa18f; margin-right: 8px;"></i> Aplicación de Botox:</strong>
+                <p>No te acuestes ni hagas ejercicio intenso durante las 4 horas posteriores a la aplicación. Evita masajear la zona tratada para no desplazar el producto.</p>
+            </div>
+            <div class="recomendacion-item" data-aos="fade-up" data-aos-delay="300">
+                <strong><i class="fa-solid fa-temperature-half" style="color: #bfa18f; margin-right: 8px;"></i> Radiofrecuencia:</strong>
+                <p>Mantén tu piel muy bien hidratada tomando abundante agua. Evita fuentes de calor directo como saunas o baños de vapor muy calientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto-section" data-aos="zoom-in">
+        <div class="contacto-caja">
+            <h2>Agenda tu Valoración</h2>
+            <p>El primer paso hacia tu mejor versión. Gestiona tu cita de manera rápida y automatizada las 24 horas del día.</p>
+            <a href="https://t.me/EsteticaMedic_bot" target="_blank" class="btn-telegram"><i class="fa-brands fa-telegram"></i> Agendar por Telegram</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-columna">
+                <h3 class="logo-footer">Clínica Estética</h3>
+                <p>Medicina estética de confianza y resultados reales.</p>
+            </div>
+            <div class="footer-columna">
+                <h4>Ubicación</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Tlalpujahua, Michoacán.</p>
+                <p><i class="fa-solid fa-envelope"></i> contacto@clinicaestetica.com</p>
+            </div>
+            <div class="footer-columna">
+                <h4>Horarios</h4>
+                <p>Lunes a Viernes: 9:00 AM - 7:00 PM</p>
+                <p>Sábados: 10:00 AM - 2:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Clínica Estética. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
