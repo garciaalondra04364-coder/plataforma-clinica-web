@@ -148,5 +148,43 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        /* 1. ENCENDER ANIMACIONES PARA QUE APAREZCAN LOS TEXTOS */
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        /* 2. FUNCIONAMIENTO DEL MENÚ DEL CELULAR */
+        const btnMenu = document.getElementById('btnMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        if (btnMenu && navLinks) {
+            btnMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('activo');
+                
+                const icono = btnMenu.querySelector('i');
+                if (navLinks.classList.contains('activo')) {
+                    icono.classList.remove('fa-bars');
+                    icono.classList.add('fa-xmark');
+                } else {
+                    icono.classList.remove('fa-xmark');
+                    icono.classList.add('fa-bars');
+                }
+            });
+
+            const enlaces = navLinks.querySelectorAll('a');
+            enlaces.forEach(enlace => {
+                enlace.addEventListener('click', () => {
+                    navLinks.classList.remove('activo');
+                    const icono = btnMenu.querySelector('i');
+                    icono.classList.remove('fa-xmark');
+                    icono.classList.add('fa-bars');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
