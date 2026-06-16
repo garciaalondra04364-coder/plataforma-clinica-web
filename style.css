@@ -181,9 +181,73 @@ nav a:hover { color: var(--color-primario); }
 .recomendacion-item p { font-size: 0.95rem; color: var(--color-texto-suave); }
 
 /* =========================================
+   NUEVO: ACORDEÓN DE PREGUNTAS FRECUENTES
+   ========================================= */
+.faq-section {
+    padding: 100px 10%;
+    background-color: var(--color-fondo);
+}
+
+.contenedor-faq {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background-color: var(--color-blanco);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    overflow: hidden;
+}
+
+.faq-pregunta {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 20px 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.faq-pregunta:hover, .faq-pregunta.activa {
+    color: var(--color-primario);
+}
+
+.faq-pregunta i {
+    font-size: 1.2rem;
+    color: var(--color-primario);
+    transition: transform 0.4s ease;
+}
+
+.faq-respuesta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background-color: var(--color-blanco);
+}
+
+.faq-respuesta p {
+    padding: 0 25px 25px 25px;
+    font-size: 0.95rem;
+    color: var(--color-texto-suave);
+    line-height: 1.6;
+}
+
+/* =========================================
    CONTACTO (CAJA FLOTANTE)
    ========================================= */
-.contacto-section { padding: 80px 10%; background-color: var(--color-fondo); display: flex; justify-content: center; }
+.contacto-section { padding: 80px 10%; background-color: var(--color-blanco); display: flex; justify-content: center; }
 
 .contacto-caja {
     background: linear-gradient(135deg, #1a1a1a, #333333);
@@ -271,6 +335,42 @@ footer { background-color: #1a1a1a; color: #ffffff; padding: 60px 10% 20px 10%; 
 }
 
 /* =========================================
+   NUEVO: BOTÓN FLOTANTE DE TELEGRAM
+   ========================================= */
+.btn-flotante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2AABEE; /* Azul oficial de Telegram */
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    box-shadow: 0 10px 20px rgba(42, 171, 238, 0.4);
+    z-index: 1000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: latido 2s infinite; /* Animación para que llame la atención */
+}
+
+.btn-flotante:hover {
+    background-color: #2298d6;
+    transform: scale(1.1);
+    animation: none; /* Se detiene al pasar el mouse */
+}
+
+/* Animación de latido */
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* =========================================
    MAGIA RESPONSIVA (PARA CELULARES)
    ========================================= */
 @media (max-width: 768px) {
@@ -321,9 +421,18 @@ footer { background-color: #1a1a1a; color: #ffffff; padding: 60px 10% 20px 10%; 
     .contacto-caja h2 { font-size: 2rem; }
 
     /* Márgenes amigables para el teléfono */
-    .filosofia-section, .tratamientos-section, .recomendaciones-section, .contacto-section {
+    .filosofia-section, .tratamientos-section, .recomendaciones-section, .faq-section, .contacto-section {
         padding: 60px 5%;
     }
 
     .tarjeta { width: 100%; }
+
+    /* Ajustes del botón flotante para que no estorbe en celular */
+    .btn-flotante {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+    }
 }

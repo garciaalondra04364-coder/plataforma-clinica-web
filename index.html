@@ -24,6 +24,7 @@
                 <li><a href="#filosofia">Filosofía</a></li>
                 <li><a href="#tratamientos">Tratamientos</a></li>
                 <li><a href="#recomendaciones">Cuidados</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contacto" class="btn-nav">Agendar Cita</a></li>
             </ul>
         </nav>
@@ -116,6 +117,43 @@
         </div>
     </section>
 
+    <!-- NUEVA SECCIÓN: ACORDEÓN DE PREGUNTAS FRECUENTES -->
+    <section id="faq" class="faq-section">
+        <div class="titulos-seccion" data-aos="fade-up">
+            <h2>Preguntas Frecuentes</h2>
+            <p>Resolvemos tus dudas al instante</p>
+        </div>
+        <div class="contenedor-faq">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <button class="faq-pregunta">
+                    <span>¿Los tratamientos son dolorosos?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-respuesta">
+                    <p>La mayoría de nuestros tratamientos son indoloros o mínimamente invasivos. Utilizamos técnicas avanzadas y, de ser necesario, anestesia tópica para tu total comodidad.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <button class="faq-pregunta">
+                    <span>¿Cuánto tiempo duran los efectos del Botox?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-respuesta">
+                    <p>Los resultados del tratamiento con toxina botulínica suelen durar entre 4 y 6 meses, dependiendo del metabolismo de cada paciente y la zona tratada.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <button class="faq-pregunta">
+                    <span>¿Puedo tomar el sol después de una limpieza facial?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-respuesta">
+                    <p>Recomendamos evitar la exposición solar directa durante las primeras 24 a 48 horas y usar siempre protector solar (FPS 50+) para proteger tu piel renovada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contacto" class="contacto-section" data-aos="zoom-in">
         <div class="contacto-caja">
             <h2>Agenda tu Valoración</h2>
@@ -146,9 +184,14 @@
         </div>
     </footer>
 
+    <!-- NUEVO: BOTÓN FLOTANTE DE TELEGRAM -->
+    <a href="https://t.me/EsteticaMedic_bot" target="_blank" class="btn-flotante" aria-label="Contactar por Telegram">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        /* 1. ENCENDER ANIMACIONES PARA QUE APAREZCAN LOS TEXTOS */
+        /* 1. ENCENDER ANIMACIONES */
         AOS.init({
             duration: 1000,
             once: true,
@@ -183,6 +226,31 @@
                 });
             });
         }
+
+        /* 3. FUNCIONAMIENTO DEL ACORDEÓN DE PREGUNTAS FRECUENTES */
+        const faqPreguntas = document.querySelectorAll('.faq-pregunta');
+        faqPreguntas.forEach(pregunta => {
+            pregunta.addEventListener('click', () => {
+                // Alternar la clase activa en la pregunta
+                pregunta.classList.toggle('activa');
+                
+                // Rotar la flechita
+                const icono = pregunta.querySelector('i');
+                if(pregunta.classList.contains('activa')) {
+                    icono.style.transform = 'rotate(180deg)';
+                } else {
+                    icono.style.transform = 'rotate(0deg)';
+                }
+
+                // Desplegar la respuesta suavemente
+                const respuesta = pregunta.nextElementSibling;
+                if (pregunta.classList.contains('activa')) {
+                    respuesta.style.maxHeight = respuesta.scrollHeight + "px";
+                } else {
+                    respuesta.style.maxHeight = null;
+                }
+            });
+        });
     </script>
 </body>
 </html>
